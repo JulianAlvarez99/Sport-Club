@@ -1,4 +1,6 @@
 USE Clubdeportivo;
+DELETE FROM A_CARGO_DE;
+
 
 insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (786584, 141);
 insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (807376, 142);
@@ -12,3 +14,6 @@ insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (908577, 149);
 insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (708584, 150);
 insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (717377, 151);
 insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (676578, 152);
+
+#Probar el trigger, verifica que un profesional este capacitado para realizar una actividad
+insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (777765, 152);
