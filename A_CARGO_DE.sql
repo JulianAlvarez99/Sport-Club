@@ -1,7 +1,6 @@
 USE Clubdeportivo;
 DELETE FROM A_CARGO_DE;
 
-
 insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (786584, 141);
 insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (807376, 142);
 insert into A_CARGO_DE (COD_ACTIVIDAD,LEGAJO) values (867976, 143);

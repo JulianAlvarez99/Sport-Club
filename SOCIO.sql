@@ -501,17 +501,17 @@ insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (1, 499, 'Jerrylee', 'Scarisbrick', '1996-07-01', 'jscarisbrickdu@nbcnews.com');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (1, 500, 'Penrod', 'Tomkins', '1972-05-06', 'ptomkinsdv@salon.com');
 
-insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 1, 'Chino', 'Garcia', '1999-08-11', 'elchinosuplanuca@gmail.com');
+insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 1, 'Chino', 'Garcia', '1999-11-08', 'elchinosuplanuca@gmail.com');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 2, 'Rozalie', 'Zukerman', '2009-01-19', 'rzukerman0@google.nl');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 3, 'Comisario', 'Encina', '2000-06-08', 'gordo_rodri@outlook.com');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 4, 'Ardelle', 'Sillis', '2004-12-13', 'asillis1@imageshack.us');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 5, 'Baldwin', 'Davern', '1998-06-02', 'bdavern0@github.com');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 6, 'Alvie', 'Dundon', '2009-05-26', 'adundon2@i2i.jp');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 7, 'Lorenzo', 'Carik', '2004-08-23', 'lcarik9@google.ca');
-insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 8, 'ReyDe', 'LosTrapos', '1999-14-07', 'cometrapo@outlook.com');
+insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 8, 'ReyDe', 'LosTrapos', '1999-07-14', 'cometrapo@outlook.com');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 9, 'Kendal', 'Iuorio', '2008-04-22', 'kiuorio6@cnbc.com');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 10, 'Carly', 'Fosbraey', '2007-08-11', 'cfosbraey4@npr.org');
-insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 11, 'Narigon', 'Ferrandi', '2000-26-04', 'jexmon2000@hotmail.com');
+insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 11, 'Narigon', 'Ferrandi', '2000-04-26', 'jexmon2000@hotmail.com');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 12, 'Sunshine', 'Harsent', '2005-07-06', 'sharsent5@yelp.com');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 13, 'Kerri', 'Riddel', '2007-10-10', 'kriddelc@google.co.jp');
 insert into SOCIO (NRO_SOCIO, NRO_GRUPO, NOMBRE_SOCIO, APELLIDO_SOCIO, FECHA_NAC_SOCIO, MAIL) values (2, 14, 'Roley', 'Middell', '1993-11-18', 'rmiddell3@godaddy.com');
