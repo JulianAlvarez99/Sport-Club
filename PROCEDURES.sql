@@ -245,7 +245,6 @@ BEGIN
     SELECT COD_CRONOGRAMA INTO v_COD_CRONOGRAMA
     FROM CRONOGRAMA
     WHERE COD_ACTIVIDAD = v_COD_ACTIVIDAD
-	  AND PERIODO = p_PERIODO
       AND COD_TURNO = v_COD_TURNO
     ORDER BY PERIODO 
     LIMIT 1;
@@ -280,7 +279,7 @@ ORDER BY PERIODO;
 
 SELECT *
 FROM TURNO
-WHERE COD_TURNO = 388;
+ORDER BY FECHA_TURNO;
 
 CREATE VIEW SOCIOS_INSCRIPTOS AS
 SELECT NRO_GRUPO, NRO_SOCIO, NOMBRE_ACT, FECHA_TURNO, HORARIO
@@ -289,8 +288,133 @@ INNER JOIN CRONOGRAMA AS CR ON SE.COD_CRONOGRAMA =CR.COD_CRONOGRAMA
 INNER JOIN ACTIVIDAD AS ACT ON CR.COD_ACTIVIDAD = ACT.COD_ACTIVIDAD
 INNER JOIN TURNO AS T ON CR.COD_TURNO = T.COD_TURNO;
 
-SELECT COUNT(*)
+SELECT *
 FROM SOCIOS_INSCRIPTOS;
 
+SELECT COD_CRONOGRAMA, NOMBRE_ACT, FECHA_TURNO, HORARIO
+FROM CRONOGRAMA AS CR
+INNER JOIN ACTIVIDAD AS ACT ON CR.COD_ACTIVIDAD = ACT.COD_ACTIVIDAD
+INNER JOIN TURNO AS T ON CR.COD_TURNO = T.COD_TURNO
+ORDER BY FECHA_TURNO;
 
 
+
+DELIMITER //
+
+CREATE PROCEDURE ActualizarPeriodoCategoriaPorGrupo (
+    IN p_NRO_GRUPO INT,
+    IN p_NUEVO_PERIODO DATE
+)
+BEGIN
+    UPDATE POSEE
+    SET PERIODO_CATEGORIA = p_NUEVO_PERIODO
+    WHERE NRO_GRUPO = p_NRO_GRUPO;
+END //
+
+DELIMITER ;
+
+
+CALL ActualizarPeriodoCategoriaPorGrupo(1, '2023-07-01');
+CALL ActualizarPeriodoCategoriaPorGrupo(	2	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	3	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	4	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	5	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	6	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	7	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	8	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	9	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	10	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	11	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	12	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	13	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	14	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	15	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	16	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	17	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	18	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	19	,'2023-02-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	20	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	21	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	22	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	23	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	24	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	25	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	26	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	27	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	28	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	29	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	30	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	31	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	32	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	33	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	34	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	35	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	36	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	37	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	38	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	39	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	40	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	41	,'2023-03-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	42	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	43	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	44	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	45	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	46	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	47	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	48	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	49	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	50	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	51	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	52	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	53	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	54	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	55	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	56	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	57	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	58	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	59	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	60	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	61	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	62	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	63	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	64	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	65	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	66	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	67	,'2023-04-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	68	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	69	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	70	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	71	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	72	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	73	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	74	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	75	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	76	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	77	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	78	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	79	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	80	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	81	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	82	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	83	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	84	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	85	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	86	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	87	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	88	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	89	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	90	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	91	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	92	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	93	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	94	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	95	,'2023-05-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	96	,'2023-06-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	97	,'2023-06-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	98	,'2023-06-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	99	,'2023-06-20'	);
+CALL ActualizarPeriodoCategoriaPorGrupo(	100	,'2023-06-20'	);
+
+SELECT *
+FROM POSEE
+ORDER BY PERIODO_CATEGORIA;

@@ -66,3 +66,51 @@ END //
 
 -- Restaurar el delimitador a ;
 DELIMITER ;
+
+
+DELIMITER //
+
+CREATE TRIGGER generar_cuota_social
+AFTER INSERT ON POSEE
+FOR EACH ROW
+BEGIN
+    DECLARE v_cod_cuota_social INT;
+    DECLARE v_monto_base DECIMAL(10, 2);
+    DECLARE v_modificacion DECIMAL(5, 2);
+    DECLARE v_fecha_vigencia DATE;
+    DECLARE v_cod_cuota_mensual INT;
+
+    -- Inicializar el valor del código de cuota social
+    SET v_cod_cuota_social = 100000;
+
+    -- Obtener el código de la cuota mensual asociada al grupo familiar
+    SELECT COD_CUOTA_MENSUAL
+    INTO v_cod_cuota_mensual
+    FROM CUOTA_MENSUAL
+    WHERE NRO_GRUPO = NEW.NRO_GRUPO
+    ORDER BY FECHA_VENC DESC
+    LIMIT 1;
+
+    IF v_cod_cuota_mensual IS NOT NULL THEN
+        -- Determinar el monto base y la modificación según la categoría del socio
+        CASE NEW.COD_CATEGORIA
+            WHEN 1 THEN -- Infantil
+                SELECT MODIFICACION_INFANTIL INTO v_modificacion FROM INFANTIL WHERE COD_CATEGORIA = NEW.COD_CATEGORIA;
+            WHEN 2 THEN -- Mayor
+                SELECT MODIFICACION_MAYOR INTO v_modificacion FROM MAYOR WHERE COD_CATEGORIA = NEW.COD_CATEGORIA;
+            WHEN 3 THEN -- Vitalicio
+                SELECT MODIFICACION_VITALICIO INTO v_modificacion FROM VITALICIO WHERE COD_CATEGORIA = NEW.COD_CATEGORIA;
+            ELSE
+                SET v_modificacion = 0;
+        END CASE;
+
+        -- Calcular la fecha de vigencia (un mes desde la fecha actual)
+        SET v_fecha_vigencia = DATE_ADD(CURDATE(), INTERVAL 1 MONTH);
+
+        -- Insertar la nueva cuota social
+        INSERT INTO CUOTA_SOCIAL (COD_CUOTA_SOCIAL, MONTO_BASE, VIGENCIA_CUOTA_SOCIAL, PORCENTAJE_MODIFICACION, NRO_GRUPO, NRO_SOCIO, COD_CUOTA_MENSUAL)
+        VALUES (v_cod_cuota_social, v_modificacion, v_fecha_vigencia, 0, NEW.NRO_GRUPO, NEW.NRO_SOCIO, v_cod_cuota_mensual);
+    END IF;
+END //
+
+DELIMITER ;
