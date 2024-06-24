@@ -226,3 +226,26 @@ SET FOREIGN_KEY_CHECKS = 1;
 COMMIT;
 
 
+
+#ESTO REEMPLAZA EL DEFERRED PERO ES MEDIO PELIGROSO, VER ALTERNATIVAS
+START TRANSACTION;
+-- Desactivar la verificación de claves foráneas
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Insertar un nuevo grupo familiar
+DELETE FROM SOCIO
+WHERE NRO_GRUPO = 501
+AND NRO_SOCIO = 3;
+
+-- Insertar el socio titular
+DELETE FROM GRUPO_FAMILIAR
+WHERE NRO_GRUPO = 501;
+
+DELETE FROM POSEE
+WHERE NRO_GRUPO = 501;
+
+-- Reactivar la verificación de claves foráneas
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Confirmar la transacción
+COMMIT;
